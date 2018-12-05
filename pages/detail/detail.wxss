@@ -1,0 +1,49 @@
+/* pages/detail/detail.wxss */
+
+page{
+      background-color: #1F1F1F;
+}
+
+.text-base-style{
+      color: #fff;
+      font-size: 16px;
+}
+
+.top-style{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+}
+
+.text-left-style{
+      display: flex;
+      flex-direction: column;
+      position: relative;
+}
+
+.text-right-style{
+      display: flex;
+      flex-direction: column;
+      display: inline;
+      float: right;
+      position: relative;
+}
+.change-btn{
+      width: 50px;
+      height: 30px;
+      margin-right: 20px;
+      border: 3rpx solid #3f3f3f;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+      background-color: #3f3f3f;
+      color: #fff;
+      font-size: 12px;
+      padding: 5px;
+      float: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+}

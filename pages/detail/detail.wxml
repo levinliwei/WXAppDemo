@@ -1,0 +1,29 @@
+<!--pages/detail/detail.wxml-->
+<view>
+      <!-- banner -->
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+            <block wx:for="{{imgUrls}}">
+                  <swiper-item>
+                        <image src="{{item}}" data-src="{{item}}" bindtap="previewImage" style="width:100%"></image>
+                  </swiper-item>
+            </block>
+      </swiper>
+
+      <view style="padding-left:10px;padding-top: 10px;">
+            <view class="top-style">
+                  <text class="text-base-style">{{table}}</text>
+                  <text class="text-base-style" style="padding-right:20px">{{time}}</text>
+            </view>
+            <view class="top-style">
+                  <text class="text-base-style" style="font-size: 10px">6人</text>
+            </view>
+
+            <view>
+                  <text class="text-base-style" style="color:darkorange">￥2500</text>
+                  <!-- <text class="text-base-style" style="padding-right:20px">{{time}}</text> -->
+                  <button class="change-btn">修改</button>
+            </view>
+      </view>
+
+      <view style="height:10px;background-color:#151515;margin-top: 10px;"></view>
+</view>

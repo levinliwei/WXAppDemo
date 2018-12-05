@@ -1,0 +1,51 @@
+<view class="home_parent">
+  <view class="" style="margin-top: 20px">
+    <text style='font-size:20px;padding:10px;color: #fff;margin-left: 10px'>选择座位和时间</text>
+    <text style='font-size:12px;padding:6px;color: #fff;'>{{userSelectBigValue}}</text>
+    <text style='font-size:12px;padding:6px;color: #fff;'>{{userSelectSmallValue}}</text>
+  </view>
+  <scroll-view scroll-x="true" class="scroll-x">
+    <view wx:for="{{items}}" data-index="{{index}}" wx:key="{{index}}" class="view-parent">
+
+      <view id="{{index}}" bindtap="bigSelectedView">
+        <view wx:if="{{index == bigSelectId}}" class="btn-select big-btn" style="background-image: url('../../image/label_selected_bg.png');">
+
+          <text class="text-big-style"> {{item.title}} </text>
+          <text class="text-small-style"> {{item.content}} </text>
+        </view>
+        <view wx:else class="btn-unselect big-btn">
+
+          <text class="text-big-style"> {{item.title}} </text>
+          <text class="text-small-style"> {{item.content}} </text>
+        </view>
+
+      </view>
+
+    </view>
+  </scroll-view>
+
+  <scroll-view scroll-x="true" class="scroll-x">
+    <view wx:for="{{items}}" data-index="{{index}}" wx:key="{{index}}" class="view-parent">
+    
+      <view id="{{index}}" bindtap="smallSelectedView">
+        <view wx:if="{{index == smallSelectId}}" style="background-image: url('../../image/label_small.png');" class="btn-select small-btn">
+
+          <text class="text-big-style"> {{item.time}} </text>
+        </view>
+        <view wx:else class="btn-unselect small-btn">
+          <text class="text-big-style"> {{item.time}} </text>
+        </view>
+
+      </view>
+
+    </view>
+  </scroll-view>
+
+
+  <text style='font-size:25px;padding:10px;color: #fff;'>测试demo</text>
+
+
+  <view class="page__bd page__bd_spacing btn-bg-style">
+    <button class="btn-style" bindtap="confirmBtn">确定</button>
+  </view>
+</view>
