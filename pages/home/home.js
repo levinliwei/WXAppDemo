@@ -65,7 +65,8 @@ Page({
     var smallSelect= wx.getStorageSync('smallSelect');
 
     wx.navigateTo({
-      url: '../detail/detail?table='+bigSelect+'&time='+smallSelect+'',
+      // url: '../detail/detail?table='+bigSelect+'&time='+smallSelect+'',
+      url: '../reserve/reserve',
       success: function(res){
         // success
       },

@@ -1,0 +1,101 @@
+/* pages/reserve/reserve.wxss */
+
+page{
+      background-color: #1f1f1f;
+}
+
+/* 隐藏scrollbar */
+::-webkit-scrollbar{
+      width: 0;
+      height: 0;
+      color: transparent;
+}
+
+.top-style{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+}
+
+.top-select-value {
+      color:#02FCFF;
+      margin-left: 15px;
+      margin-top: 10px;
+      font-size: 12px;
+      float: right;
+      margin-right: 15px;
+}
+
+.item-style{
+      height: 80px;
+      background-color: #333333;
+      border-radius: 4px;
+      margin: 8px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 20px;
+      padding-right: 20px;
+}
+
+.item-sub-text{
+      display: flex;
+      flex-direction: column;
+}
+
+.item-right-style{
+      float: right;
+      margin-left: 20px;
+      align-items: flex-end; /** 子item右对齐*/
+}
+
+.item-image{
+      width: 30px;
+      height: 30px;
+}
+
+.data-select{
+      display: flex;
+      flex-direction: column;
+}
+
+/*模态框*/
+.modals{
+      position:fixed; 
+      z-index: 999; 
+      top:0; left: 0; right:0;  bottom: 0;
+}
+.modals-cancel{
+      position:absolute; 
+      z-index:1000; 
+      top:0; left: 0; right:0; bottom: 0; 
+      background-color: rgba(0,0,0,.5);
+}
+.bottom-dialog-body{
+      position:absolute; 
+      z-index:10001; 
+      bottom:0; left:0; right:0; 
+      padding:30rpx; 
+      height:500rpx; 
+      background-color: #fff
+}
+/*动画前初始位置*/
+.bottom-pos{
+      -webkit-transform:translateY(100%);
+      transform:translateY(100%);
+}
+
+.left-right-item{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; 
+      align-items: center;
+}
+
+.item-content{
+      display: flex;
+      flex-direction: column;
+}
+    
