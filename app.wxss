@@ -1,5 +1,8 @@
 /**app.wxss**/
 @import 'weui.wxss';
+@import 'components/wux.wxss';
+@import 'assets/styles/weui.wxss';
+@import 'assets/styles/skyvow.wxss';
 
 .container {
   height: 100%;

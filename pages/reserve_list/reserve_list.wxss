@@ -1,0 +1,67 @@
+/* pages/reserve_list/reserve_list.wxss */
+
+page{
+      background-color: #1f1f1f;
+}
+
+.top-style{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+}
+
+.top-select-value {
+      color:#02FCFF;
+      margin-left: 15px;
+      margin-top: 10px;
+      font-size: 12px;
+      float: right;
+      margin-right: 15px;
+}
+
+.item-style{
+      height: 80px;
+      background-color: #333333;
+      border-radius: 4px;
+      margin: 8px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 20px;
+      padding-right: 20px;
+}
+
+.item-sub-text{
+      display: flex;
+      flex-direction: column;
+}
+
+.item-right-style{
+      float: right;
+      margin-left: 20px;
+      align-items: flex-end; /** 子item右对齐*/
+}
+
+.item-image{
+      width: 15px;
+      height:15px;
+}
+
+.left-right-item{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; 
+      align-items: center;
+}
+
+.item-content{
+      display: flex;
+      flex-direction: column;
+}
+
+.arrow-style {
+      width: 15px;
+      height:15px;
+} 

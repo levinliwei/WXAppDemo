@@ -1,14 +1,36 @@
 <!--index.wxml-->
-<view class="container">
+<scroll-view  class="container" scroll-y="true">
   <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取用户信息 </button>
     <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    
+
+      <canvas class='canvas' style="width:{{qrcode_w}}px; height:{{qrcode_w}}px;" canvas-id='canvas'></canvas>
+
+      <!-- <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image> -->
+
     </block>
+
+    <!-- 历史 -->
+    <view class="history-content">
+      <text class="history-title"> 历史签到记录 </text>
+      <image wx:if="{{isShowHistoryArrow}}" style="width: 40px;height: 50px;" src="../../image/down_more.png" bindtap="openShowHistroy" 
+      animation="{{animationUpDownItem}}">>
+      </image>
+      <!-- 列表 -->
+      <scroll-view >
+        <view wx:if="{{isShowHistroryContent}}" class="history-content" wx:for="{{items}}" wx:key="{{index}}" data-index="{{index}}">
+          <view id="{{index}}" class="item-style" bindtap="itemClick">
+            <text>{{item.content}}</text>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+
   </view>
+
   <view>
     <button class="start-btn" wx:if="{{hasUserInfo}}" type="button" bindtap="gotoHomePage"> 开始启动 </button>
   </view>
-</view>
+
+</scroll-view >

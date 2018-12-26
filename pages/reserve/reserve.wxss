@@ -54,6 +54,7 @@ page{
 .item-image{
       width: 30px;
       height: 30px;
+      padding-top: 10px;
 }
 
 .data-select{
@@ -97,5 +98,25 @@ page{
 .item-content{
       display: flex;
       flex-direction: column;
+}
+
+.arrow-style {
+      width: 15px;
+      height:15px;
+}
+
+.arrow-content{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center; 
+      float:right;
+      margin-right: 15px;
+}
+.arrow-content-text{
+      margin-right: 10px;
+      color:#02FCFF;
+      margin-left: 15px;
+      font-size: 12px;
 }
     

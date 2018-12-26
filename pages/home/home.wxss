@@ -77,3 +77,14 @@ border-bottom-right-radius: 5px; */
     font-size: 18px;
     background: #DF9211;
 }
+
+.img {
+    height: 90rpx;
+    width: 90rpx;
+    border-radius: 25px;
+}
+
+.img-icon {
+    height: 30rpx;
+    width: 50rpx;
+}

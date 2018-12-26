@@ -26,7 +26,7 @@
 
   <scroll-view scroll-x="true" class="scroll-x">
     <view wx:for="{{items}}" data-index="{{index}}" wx:key="{{index}}" class="view-parent">
-    
+
       <view id="{{index}}" bindtap="smallSelectedView">
         <view wx:if="{{index == smallSelectId}}" style="background-image: url('../../image/label_small.png');" class="btn-select small-btn">
 
@@ -41,11 +41,16 @@
     </view>
   </scroll-view>
 
+  <text style='font-size:25px;padding:10px;color: #fff;' bindtap="danmu">弹幕</text>
 
-  <text style='font-size:25px;padding:10px;color: #fff;'>测试demo</text>
-
+  <cover-view>
+    <cover-image class="img-icon" src="../../assets/images/iconfont-about-active.png"/>
+      <cover-image class="img" src="{{avatarImg}}}"/>
+  </cover-view>
 
   <view class="page__bd page__bd_spacing btn-bg-style">
-    <button class="btn-style" bindtap="confirmBtn">确定</button>
+    <button class="btn-style" bindtap="come_baby">确定</button>
   </view>
+
+  <text style="color:white" > {{address}}</text>
 </view>

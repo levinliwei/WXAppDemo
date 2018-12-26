@@ -26,3 +26,13 @@
   width: 200rpx;
   height: 80rpx;
 }
+.history-title{
+  border-bottom: 1px #000 solid; /* 高度、颜色、实线 */
+}
+
+.history-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60rpx;
+}

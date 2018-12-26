@@ -6,13 +6,13 @@ const dateWeeks = []
 const hours = []
 const minutes = []
 
-for (let i = 0; i <= 100; i++) {
-  if (i==0) {
+for (let i = 0; i <= 10000; i++) {
+  if (i == 0) {
     dateWeeks.push("今天")
   } else {
     var addDate = dateTimePicker.getAddDate(i);
     var curWeek = dateTimePicker.getWeekByDate(addDate);
-    dateWeeks.push(addDate + " " +curWeek)
+    dateWeeks.push(addDate + " " + curWeek)
   }
 }
 
@@ -61,14 +61,25 @@ Page({
     selectDataWeek: "",
     selectHour: "",
     selectMinute: "",
+    selectDateValue:"", //选择的时间最终的拼接value
+  },
+
+  selectDateConfirm: function (e) {
+    console.log(e)
+    var that = this;
+    that.setData({
+      selectDateValue: that.data.selectDataWeek  + " " +that.data.selectHour + ":" +  that.data.selectMinute,
+    })
+    that.hideModal();
   },
 
   bindChange: function (e) {
-    const val = e.detail.value
+    const val = e.detail.value //滚轮选择的value
+    console.log(val)
     this.setData({
       selectDataWeek: this.data.dateWeeks[val[0]],
       selectHour: this.data.hours[val[1]],
-      selectMinute: this.data.minutes[val[1]],
+      selectMinute: this.data.minutes[val[2]],
     })
   },
 
@@ -85,7 +96,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(dateTimePicker.getAddDate(0))
+    wx.request({
+      url: 'http://api.douban.com/v2/movie/subject/1764796',
+      data: {},
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      // header: {}, // 设置请求的 header
+      success: function(res){
+        // success
+        console.log(res)
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
   },
 
   // 显示遮罩层
@@ -95,7 +121,7 @@ Page({
       hideModal: false
     })
     var animation = wx.createAnimation({
-      duration: 600,//动画的持续时间 默认400ms   数值越大，动画越慢   数值越小，动画越快
+      duration: 400,//动画的持续时间 默认400ms   数值越大，动画越慢   数值越小，动画越快
       timingFunction: 'ease',//动画的效果 默认值是linear
     })
     this.animation = animation
@@ -108,7 +134,7 @@ Page({
   hideModal: function () {
     var that = this;
     var animation = wx.createAnimation({
-      duration: 800,//动画的持续时间 默认400ms   数值越大，动画越慢   数值越小，动画越快
+      duration: 400,//动画的持续时间 默认400ms   数值越大，动画越慢   数值越小，动画越快
       timingFunction: 'ease',//动画的效果 默认值是linear
     })
     this.animation = animation
@@ -117,7 +143,7 @@ Page({
       that.setData({
         hideModal: true
       })
-    }, 720)//先执行下滑动画，再隐藏模块
+    }, 200)//先执行下滑动画，再隐藏模块
 
   },
 

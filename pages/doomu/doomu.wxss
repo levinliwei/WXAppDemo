@@ -1,0 +1,90 @@
+/* pages/doomu/doomu.wxss */
+.slide-image{
+      width: 100%;
+      height: 400rpx;
+   }
+   .swper-img{
+     width: 100%;
+     height: 500rpx;
+   }
+
+   .button{
+      position: absolute;
+      bottom: 0;
+      width: 50%;
+    }
+    .aon{
+    position: absolute;
+    color: white;
+    white-space:nowrap;/* 防止向下换行*/
+    }
+    .doommview{
+      z-index: 3;
+      height: 300rpx;
+      width: 100%;
+      position: absolute;
+      top: 0;
+    }
+    /**定义从右边向左边的移动的动画**/
+    @keyframes first{
+      from{left: 100%; }
+      to{left: -100%;}
+    }
+
+.avatar-img {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+}
+
+.danmu-content{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: first baseline;
+
+  z-index: 3;
+  height: 300rpx;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.barrage-text-box{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 426rpx;
+  width: 750rpx;
+  overflow: hidden;
+}
+.barrage-item{
+  background: #363131;
+  opacity: 0.95;
+  color: #fff;
+  font-size: 32rpx;
+  position: absolute;
+  top: 0;
+  height: 80rpx;
+  border-radius: 80rpx;
+  display: flex;
+  align-items: center;
+  padding: 0rpx 24rpx 0 10rpx;
+  box-sizing: border-box;
+  transform: translate(750rpx,0);
+}
+.barrage-item .icon{
+  width: 41rpx;
+  height: 35rpx;
+}
+.barrage-item .icon-box{
+  width: 60rpx;
+  height: 60rpx;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}

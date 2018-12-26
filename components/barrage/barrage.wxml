@@ -1,0 +1,9 @@
+<!--components/barrage/barrage.wxml-->
+<view class='barrage-text-box' id='barrage-text-box'>
+  <view class='barrage-item' id="{{itemPrefix}}-{{index}}" wx:for="{{currentBarrageData}}" wx:key="{{index}}" style="{{item.realStyle}}">
+    <view class='icon-box'>
+      <image class='icon' src='{{barrageHornIcon}}'></image>
+    </view>
+    <text>{{item.content}}</text>
+  </view>
+</view>

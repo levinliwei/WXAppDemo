@@ -1,0 +1,38 @@
+/* components/barrage/barrage.wxss */
+.barrage-text-box{
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 426rpx;
+      width: 750rpx;
+      overflow: hidden;
+    }
+    .barrage-item{
+      background: #4f76ec;
+      opacity: 0.95;
+      color: #fff;
+      font-size: 32rpx;
+      position: absolute;
+      top: 0;
+      height: 80rpx;
+      border-radius: 80rpx;
+      display: flex;
+      align-items: center;
+      padding: 0rpx 24rpx 0 10rpx;
+      box-sizing: border-box;
+      transform: translate(750rpx,0);
+    }
+    .barrage-item .icon{
+      width: 41rpx;
+      height: 35rpx;
+    }
+    .barrage-item .icon-box{
+      width: 60rpx;
+      height: 60rpx;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      margin-right: 10rpx;
+    }

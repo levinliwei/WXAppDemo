@@ -1,6 +1,8 @@
 // pages/home/home.js
 
 var fileData = require('../../utils/util.js')
+// 引入SDK核心类
+var QQMapWX = require('../../libs/qqmap-wx-jssdk.min.js');
 Page({
 
   /**
@@ -22,13 +24,53 @@ Page({
     smallSelectId: -1,
     userSelectBigValue: "",
     userSelectSmallValue: "",
+    currentAddress: '当前地址',
+    latitude: null,
+    longitude: null,
+    address: null,
+    avatarImg:"http://img5.imgtn.bdimg.com/it/u=4214211458,453823117&fm=26&gp=0.jpg",
+
   },
 
   /** 
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this
+    //1、获取当前位置坐标
+    wx.getLocation({
+      type: 'wgs84',
+      success: function (res) {
+        console.log(res.latitude)
+        console.log(res.longitude)
+        var latitude = res.latitude
+        var longitude = res.longitude
 
+        that.setData({
+          latitude: res.latitude,
+          longitude: res.longitude
+        })
+
+        var qqmapsdk = new QQMapWX({
+          key: 'TJQBZ-VK73O-TERWK-S3ZIR-5W4H6-46BSJ' // 必填
+        });
+        //2、根据坐标获取当前位置名称，
+        qqmapsdk.reverseGeocoder({
+          location: {
+            // latitude: latitude,
+            // longitude: longitude
+            latitude: 39.984060,
+            longitude: 116.307520
+          },
+          success: function (addressRes) {
+            console.log(addressRes.result.address)
+            that.setData({
+              address: addressRes.result.address
+            })
+          }
+        })
+      }
+    })
   },
 
   /**
@@ -37,6 +79,12 @@ Page({
   onUnload: function () {
     wx.setStorageSync('bigSelect', "")
     wx.setStorageSync('smallSelect', "")
+  },
+
+  come_baby: function (event) {
+    wx.switchTab({
+      url: '../reserve/reserve',
+    })
   },
 
   bigSelectedView: function (e) {
@@ -59,23 +107,47 @@ Page({
     wx.setStorageSync('smallSelect', that.data.items[e.currentTarget.id].time)
   },
 
+  // 右上角触发转发分享功能
+  onShareAppMessage: function () {
+    return {
+      title: '测试转发',
+    }
+  },
+
+  // danmu
+  danmu: function () {
+    wx.navigateTo({
+      url: '../doomu/doomu',
+      success: function (res) {
+        // success
+      },
+      fail: function () {
+        // fail
+      },
+      complete: function () {
+        // complete
+      }
+    })
+  },
+
   confirmBtn: function (e) {
     var data = this;
     var bigSelect = wx.getStorageSync('bigSelect');
-    var smallSelect= wx.getStorageSync('smallSelect');
+    var smallSelect = wx.getStorageSync('smallSelect');
 
     wx.navigateTo({
       // url: '../detail/detail?table='+bigSelect+'&time='+smallSelect+'',
       url: '../reserve/reserve',
-      success: function(res){
+      success: function (res) {
         // success
       },
-      fail: function() {
+      fail: function () {
         // fail
       },
-      complete: function() {
+      complete: function () {
         // complete
       }
     })
-  }
+  },
+
 })

@@ -1,0 +1,34 @@
+<!--pages/doomu/doomu.wxml-->
+<import src="../../components/rater/rater.wxml"/>
+<!-- banner -->
+<swiper class="swper-img" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+            <swiper-item>
+                  <image src="{{item}}" data-src="{{item}}" bindtap="previewImage" class="swper-img"></image>
+            </swiper-item>
+      </block>
+</swiper>
+
+<view class='barrage-text-box' id='barrage-text-box'>
+      <view class='barrage-item' id="{{itemPrefix}}-{{index}}" wx:for="{{doommData}}" wx:key="{{index}}" style="{{item.realStyle}}">
+            <view class='icon-box'>
+                  <image class='icon' src='{{barrageHornIcon}}'></image>
+            </view>
+            <text style="white-space:nowrap;">{{item.content}}</text>
+      </view>
+</view>
+
+<view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+            <view class="weui-cell__bd">set default score = 5</view>
+            <view class="weui-cell__ft">
+                  <template is="rater" data="{{ ...$wux.rater.star }}"></template>
+            </view>
+      </view>
+      <view class="weui-cell">
+            <view class="weui-cell__bd">change color</view>
+            <view class="weui-cell__ft">
+                  <template is="rater" data="{{ ...$wux.rater.changeColor }}" ></template>
+            </view>
+      </view>
+</view>

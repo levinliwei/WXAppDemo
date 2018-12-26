@@ -4,12 +4,37 @@
     "pages/logs/logs",
     "pages/home/home",
     "pages/detail/detail",
-    "pages/reserve/reserve"
+    "pages/reserve/reserve",
+    "pages/reserve_list/reserve_list",
+    "pages/search/search",
+    "pages/danmu/danmu",
+    "pages/doomu/doomu"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "WayneWXDemo",
     "navigationBarTextStyle": "white"
-  }
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "black",
+    "backgroundColor": "#1f1f1f",
+    "list": [
+      {
+        "selectedIconPath": "image/reserve_select.png",
+        "iconPath": "image/reserve_unselect.png",
+        "pagePath": "pages/reserve/reserve",
+        "text": "预订"
+      },
+      {
+        "selectedIconPath": "image/reserve_select.png",
+        "iconPath": "image/reserve_unselect.png",
+        "pagePath": "pages/reserve_list/reserve_list",
+        "text": "预订列表"
+      }
+    ]
+  },
+  "debug": true
 }

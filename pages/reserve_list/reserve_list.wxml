@@ -1,0 +1,26 @@
+<!--pages/reserve_list/reserve_list.wxml-->
+<view> 
+      <!-- 列表 -->
+      <scroll-view>
+            <view wx:for="{{items}}" wx:key="{{index}}" data-index="{{index}}">
+                  <view id="{{index}}" class="item-style" bindtap="itemClick">
+                        <!-- flex:1 左侧内容布局占据除选择图标剩下的全部空间 -->
+                        <view class="top-style" style="flex:1">
+                              <view class="item-sub-text">
+                                    <text style="color:white">{{item.title}}</text>
+                                    <text style="color:gray;font-size: 12px;">可容纳{{item.task}}人</text>
+                              </view>
+
+                              <view class="item-sub-text item-right-style">
+                                    <text style="color:white">￥{{item.amount}}</text>
+                                    <text style="color:gray;font-size: 12px;">最低消费￥{{item.discom}}</text>
+                              </view>
+                        </view>
+
+                        <view class="item-right-style">
+                              <image class="item-image" src="/image/ic_arrow.png" />
+                        </view>
+                  </view>
+            </view>
+      </scroll-view>
+</view>

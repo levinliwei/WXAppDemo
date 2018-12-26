@@ -1,0 +1,31 @@
+<!-- 模板 -->
+<template name="template_test">
+      <button>
+            {{tp_value}}
+      </button>
+</template>
+
+<!--pages/search/search.wxml-->
+<view class="i-sticky-demo-des">
+      注: 1.由于组件内部不能使用onPageScroll,导致不能监听scrollTop值只能通过用户用props传递。
+</view>
+
+<template is="template_test" data="{{tp_value}}"></template>
+
+<view class="i-sticky-demo">
+
+      <i-sticky scrollTop="{{scrollTop}}">
+            <view wx:for="{{items}}" wx:key="{{index}}" data-index="{{index}}">
+                  <view id="{{index}}" class="item-style">
+                        <i-sticky-item i-class="i-sticky-demo-title">
+                              <view slot="title"> {{item.label}}</view>
+                              <view wx:for="{{item.data}}" wx:for-item= "subItem" wx:key="{{index}}" data-index="{{index}}" slot="content">
+                                    <view id="{{index}}" class="i-sticky-demo-item" style="height: 50px;color: yellow" bindtap="selectSubUser">
+                                          {{subItem.name + subItem.phone}}
+                                    </view>
+                              </view>
+                        </i-sticky-item>
+                  </view>
+            </view>
+      </i-sticky>
+</view>
